@@ -1,4 +1,6 @@
-let config = {
+let config, game;
+
+config = {
   type: Phaser.AUTO,
   parent: 'game',
   width: 624,
@@ -10,7 +12,7 @@ let config = {
   }
 };
 
-let game = new Phaser.Game(config);
+game = new Phaser.Game(config);
 
 function preload() {
   this.load.image('PLAN', '../img/PLAN.png');
@@ -21,15 +23,18 @@ function preload() {
 }
 
 function create() {
-  let map = this.make.tilemap({
+  let map, Plan, Background, Walls, Objects, Monsters;
+
+  map = this.make.tilemap({
     key: 'room1'
   });
 
-  const Plan = map.addTilesetImage('PLAN');
-  const Background = map.createStaticLayer('Background', Plan, 0, 0);
-  const Walls = map.createStaticLayer('Walls', Plan, 0, 0);
-  const Objects = map.createStaticLayer('Objects', Plan, 0, 0);
-  const Monsters = map.createStaticLayer('Monsters', Plan, 0, 0);
+  Plan = map.addTilesetImage('PLAN');
+  
+  Background = map.createStaticLayer('Background', Plan, 0, 0);
+  Walls = map.createStaticLayer('Walls', Plan, 0, 0);
+  Objects = map.createStaticLayer('Objects', Plan, 0, 0);
+  Monsters = map.createStaticLayer('Monsters', Plan, 0, 0);
 }
 
 function update() {}
