@@ -5,7 +5,7 @@ config = {
   parent: 'game',
   width: 624,
   height: 384,
-  zoom: 2,
+  zoom: 1.5,
   physics: {
     default: "arcade",
     arcade: {
