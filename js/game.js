@@ -5,6 +5,7 @@ config = {
   parent: 'game',
   width: 624,
   height: 384,
+  zoom: 3,
   scene: {
     preload: preload,
     create: create,
